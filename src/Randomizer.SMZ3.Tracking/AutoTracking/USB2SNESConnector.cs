@@ -202,7 +202,7 @@ namespace Randomizer.SMZ3.Tracking.AutoTracking
 
                 if (_lastMessage != null)
                 {
-                    _logger.LogTrace($"Receiving {_lastMessage.Type} unknown binary data");
+                    _logger.LogInformation($"Receiving {data.Raw.Length} bytes of {_lastMessage.Type} binary data for location 0x{_lastMessage.Address:X}");
                     MessageReceived?.Invoke(this, new(_lastMessage.Address, data));
                     _lastMessage = null;
                 }
